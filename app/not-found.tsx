@@ -11,10 +11,7 @@ export default function NotFound() {
         alt="imagem para página não encontrada"
       />
       <h1 className="text-2xl">Página não encontrada</h1>
-      <Link
-        href={"/"}
-        className="text-lg text-blue-500 hover:underline visited:text-shadow-cyan-500"
-      >
+      <Link href={"/"} className="link">
         Voltar para página inicial
       </Link>
     </main>

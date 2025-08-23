@@ -1,9 +1,26 @@
+@import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "tailwindcss";
 
 body {
   background-color: white;
+}
+
+.link {
+  @apply text-lg font-medium text-blue-500 hover:underline visited:text-shadow-cyan-500 hover:cursor-pointer;
+}
+
+.primary-button {
+  @apply bg-blue-500 p-2 rounded-md mt-2 text-white hover:bg-blue-600 transition-all ease-linear cursor-pointer md:text-lg;
+}
+
+.label {
+  @apply font-medium;
+}
+
+.input {
+  @apply border-1 rounded-md p-3 outline-blue-500;
 }
