@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  variable: '--font-inter',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "FinTracker",
+  title: 'FinTracker',
   description:
-    "Assuma o controle total das suas finanças e comece a construir um futuro mais próspero hoje mesmo",
+    'Assuma o controle total das suas finanças e comece a construir um futuro mais próspero hoje mesmo',
 };
 
 export default function RootLayout({
