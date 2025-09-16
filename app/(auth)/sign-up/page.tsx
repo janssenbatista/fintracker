@@ -17,10 +17,18 @@ export const formSchema = z.object({
     .trim(),
   password: z
     .string()
-    .min(8, 'A senha deve conter no mínimo 8 caracteres.')
-    .regex(/[A-Z]/, 'A senha deve conter pelo menos uma letra maiúscula.')
-    .regex(/[a-z]/, 'A senha deve conter pelo menos uma letra minúscula.')
-    .regex(/[0-9]/, 'A senha deve conter pelo menos um número.'),
+    .min(8, { message: 'A senha deve ter no mínimo 8 caracteres' })
+    .regex(/[a-z]/, {
+      message: 'A senha deve conter pelo menos uma letra minúscula',
+    })
+    .regex(/[A-Z]/, {
+      message: 'A senha deve conter pelo menos uma letra maiúscula',
+    })
+    .regex(/[0-9]/, { message: 'A senha deve conter pelo menos um número' })
+    .regex(/[!@#$%^&*]/, {
+      message:
+        'A senha deve conter pelo menos um caractere especial (!@#$%^&*)',
+    }),
 });
 
 export type FormSchemaType = z.infer<typeof formSchema>;
@@ -125,10 +133,10 @@ export default function Page() {
         </button>
       </form>
       {signupErrorMessage && (
-        <p className="text-red-500 pr-2 pl-2 pb-2">{signupErrorMessage}</p>
+        <p className="text-red-500 pr-4 pl-4 pb-2">{signupErrorMessage}</p>
       )}
       {successMessage && (
-        <p className="text-green-500 pr-2 pl-2 pb-2">{successMessage}</p>
+        <p className="text-green-500 pr-4 pl-4 pb-2">{successMessage}</p>
       )}
       <div className="flex gap-1 text-sm md:text-lg">
         <span>Já possui uma conta?</span>
